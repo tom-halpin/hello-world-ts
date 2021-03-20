@@ -22,6 +22,12 @@ const questions: Question[] = [
       message: chalk.green('Select message to display [required]'),
       choices: ['Hello', 'Hi', "Howdy", "Good day", "Dia dhuit"],
     },
+    {
+      type: 'rawlist',
+      name: 'question',
+      message: chalk.green('Select question to ask by way of reply [required]'),
+      choices: ['How you doing?', 'How are things?', "Wazzup?"],
+    },
   ];
 
 class HelloWorld {
@@ -35,7 +41,7 @@ class HelloWorld {
         this.prompt = prompt(questions);
         this.prompt.then((answers: Answers) => {
             console.log('-------------------------------');
-            console.log(chalk.blueBright(answers.message), chalk.blueBright(answers.name));
+            console.log(chalk.blueBright(answers.message), chalk.blueBright(answers.name), chalk.blueBright(answers.question));
         });
 
     }
